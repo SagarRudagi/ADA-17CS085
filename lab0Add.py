@@ -1,13 +1,12 @@
-arr = []
-n = int(input("Number of elements : "))
-print("Elements : ")
-
-for i in range(n):
-	arr.append(int(input()))
-
-arr.sort()
-key = int(input("Key : "))
-if key in arr:
-	print("Found at position ",arr.index(key))
-else :
-	print("Not found")
+"""This python file is associated with lab0Add.txt
+The following terminal command is used to execute it
+python3 lab0Add.py<lab0Add.txt"""
+tc = int(input())
+for i in range(tc):
+	arr = []
+	n,k = map(int, input().split(" "))
+	arr.extend(input().split(" "))
+	if str(k) in arr:
+		print("1")
+	else:
+		print("-1")
