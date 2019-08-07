@@ -1,4 +1,4 @@
-"""This python file is associated with lab0Add.txt
+"""This python file is associated with lab0Add.txt (if does not exist then create it)
 The following terminal command is used to execute it
 python3 lab0Add.py<lab0Add.txt"""
 
