@@ -1,0 +1,11 @@
+lst = list(map(int,input().split()))
+k = int(input())
+
+for i in range(k):
+	min = i
+	for j in range(0,len(lst)):
+		if lst[min]>lst[j]:
+			min = j
+	lst[min],lst[j] = lst[j],lst[min]
+
+print(lst[k])
