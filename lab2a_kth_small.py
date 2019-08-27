@@ -8,4 +8,4 @@ for i in range(k):
 			min = j
 	lst[min],lst[i] = lst[i],lst[min]
 
-print(lst[k])
+print(lst[k-1])
