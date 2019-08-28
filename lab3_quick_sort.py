@@ -9,9 +9,9 @@ def partition(arr,low,high):
 	i = low + 1
 	j = high
 	while True:
-		while arr[i]<=pivot and i<=high:
+		while i<=high and arr[i]<=pivot:
 			i = i+1	
-		while arr[j]>=pivot and i>=low:
+		while j>=low and arr[j]>=pivot:
 			j = j-1
 		if i<j:
 			arr[i],arr[j] = arr[j],arr[i]
