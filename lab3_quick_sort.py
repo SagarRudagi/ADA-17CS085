@@ -19,6 +19,6 @@ def partition(arr,low,high):
 			arr[low],arr[j]=arr[j],arr[low]
 			return j
 
-arr = [3,5,8,2,8,3,9,1,0,4]
+arr = list(map(int,input().split()))
 quick_sort(arr,0,len(arr)-1)
 print(arr)
