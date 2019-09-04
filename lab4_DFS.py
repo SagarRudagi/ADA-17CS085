@@ -1,3 +1,5 @@
+# Uses dfs.txt as input
+
 n = int(input())
 adjacent=[]
 for i in range(n):
