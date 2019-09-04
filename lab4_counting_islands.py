@@ -1,3 +1,5 @@
+#Uses counting_islands-2.txt as input
+
 class Graph: 
   
     def __init__(self, row, col, g): 
