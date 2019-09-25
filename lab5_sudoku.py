@@ -1,15 +1,15 @@
 from math import sqrt
 
 def print_grid(arr): 
-    for i in range(9): 
-        for j in range(9): 
-            print (arr[i][j],end=" ") 
+    for i in range(n): 
+        for j in range(n): 
+            print(arr[i][j], end=" ") 
         print () 
 
 def findUnassigned(graph,l):
 	#global n
-	for i in range(9):
-		for j in range(9):
+	for i in range(n):
+		for j in range(n):
 			if(graph[i][j]==0):
 				l[0] = i
 				l[1] = j
@@ -18,28 +18,28 @@ def findUnassigned(graph,l):
 
 def inRow(graph,row,num):
 	#global n
-	for i in range(9):
+	for i in range(n):
 		if(graph[row][i]==num):
 			return True
 	return False
 
 def inCol(graph,col,num):
 	#global n
-	for i in range(9):
+	for i in range(n):
 		if(graph[i][col]==num):
 			return True
 	return False
 
 def inSubGrid(graph,row,col,num):
 	#global n
-	for i in range(int(sqrt(9))):
-		for j in range(int(sqrt(9))):
+	for i in range(int(sqrt(n))):
+		for j in range(int(sqrt(n))):
 			if(graph[i+row][j+col]==num):
 				return True
 	return False
 
 def isSafe(graph,row,col,num):
-	return not inRow(graph,row,num) and not inCol(graph,col,num) and not inSubGrid(graph,row-row%int(sqrt(9)),col-col%int(sqrt(9)),num)
+	return not inRow(graph,row,num) and not inCol(graph,col,num) and not inSubGrid(graph,row-row%int(sqrt(n)),col-col%int(sqrt(n)),num)
 
 def solveSudoku(graph):
 	#global n
@@ -57,6 +57,7 @@ def solveSudoku(graph):
 	return False
 
 if __name__ =="__main__":
+	global n
 	n = int(input())
 	graph=[]
 	for i in range(n):
