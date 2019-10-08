@@ -6,10 +6,10 @@ graph = []
 for i in range(n):
 	graph.append(list(map(int,input().split())))
 
-in_degree = [0] * n
+in_degree = {}
 for i in range(n):
 	for j in range(n):
-		in_degree[j]+= graph[i][j]
+		in_degree[j] = in_degree.get(j,0) + graph[i][j]
 
-
-print(in_degree)
+seq = dict(sorted(in_degree.items(), key = lambda x : x[1]))
+print(list(seq.keys()))
