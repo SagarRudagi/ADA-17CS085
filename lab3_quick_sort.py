@@ -11,7 +11,7 @@ def partition(arr,low,high):
 	while True:
 		while i<=high and arr[i]<=pivot:
 			i = i+1	
-		while j>=low and arr[j]>=pivot:
+		while j>=low and arr[j]>pivot:
 			j = j-1
 		if i<j:
 			arr[i],arr[j] = arr[j],arr[i]
