@@ -13,20 +13,52 @@ cost = [inf for i in range(n)]
 cost[src] = 0
 count = 0
 visited[src] = True
-minimum = inf
+
 
 for i in range(len(edges[src])):
 	cost[edges[src][i][0]] = edges[src][i][1]
-print(cost)
+
 count+=1
 
 while count < n:
+	minimum = inf
 	for i in range(n):
 		if not visited[i]:
 			if cost[i]<minimum:
 				minimum = cost[i]
 				minimumVert = i
 
+	visited[minimumVert] = True
+	for j in range(len(edges[minimumVert])):
+		if not visited[edges[minimumVert][j][0]]:
+			cost[edges[minimumVert][j][0]] = min(cost[edges[minimumVert][j][0]],minimum + edges[minimumVert][j][1])
+	count +=1
 
+
+print(cost)
 for i in range(n):
-	print(edges[i])
+	print(src," - ",i," -> ",cost[i])
+
+"""
+INPUT
+
+5 7 2
+0 1 3
+1 4 1
+4 3 7
+3 2 2
+2 0 1
+1 2 7
+1 3 5
+
+
+OUTPUT
+
+[1, 4, 0, 2, 5]
+2  -  0  ->  1
+2  -  1  ->  4
+2  -  2  ->  0
+2  -  3  ->  2
+2  -  4  ->  5
+
+"""
