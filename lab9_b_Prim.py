@@ -45,5 +45,5 @@ class Graph():
 n = int(input())
 g = Graph(n)
 for i in range(n): 
-    g.graph.append(list(map(int,input().split())))  
+    g.graph[i]=list(map(int,input().split()))
 g.primMST()
